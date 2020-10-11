@@ -3,7 +3,7 @@ ser = serial.Serial('/dev/ttyS0', 115200)
 ser.timeout = 2.5
 if not ser.is_open:
   ser.open()
-
+#Note: Should check if echo is on before turning it off
 ser.write(b'ate0\r')
 ser.readline()
 ser.write(b'at+cgpsinfo\r')
